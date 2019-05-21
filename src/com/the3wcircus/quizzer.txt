@@ -1,0 +1,7 @@
+Which of the following is not a primitive type in Java,int,Float,boolean,char,2
+Which class do all other classes inherit from,Applet,Class,Object,Instance,3
+String class is defined in which package,lang,Swing,awt,Object,1
+Which one among these is not a method of the Object class,toString(),finalize(),equals(),getDocumentBase(),4
+Which one of these statements is true regarding Arrays,Arrays are list of objects that each require a key and a value,Arrays are a simple collection of elements,Arrays grow and shrink automatically,Arrays cannot be sorted,2
+What was the programming language Java originally called,Pine,Oak,Mocha,JavaBeans,2
+
