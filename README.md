@@ -11,8 +11,9 @@ In this mini-project, you will build a local file-driven Quizzer Java console ap
 
 
 ### Tips and Suggestions
+* Load your questions in a data structure that makes it easy to choose your random questions like a ```HashMap```
+* Use ```java.util.Random``` to pick your questions (http://www.codecodex.com/wiki/Generate_Random_Numbers_Without_Repetition)
 * Start your question database ```quizzer.txt``` by creating a new text file and entering at least 5 questions manually
-* Load your questions in a data structure that makes it easy to choose your rendom questions
 * You may structure your question records how ever you wish, but each question should have:
 ```
 Question Text
