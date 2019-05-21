@@ -13,7 +13,7 @@ In this mini-project, you will build a local file-driven Quizzer Java console ap
 ### Tips and Suggestions
 * Load your questions in a data structure that makes it easy to choose your random questions like a ```HashMap```
 * Use ```java.util.Random``` to pick your questions (http://www.codecodex.com/wiki/Generate_Random_Numbers_Without_Repetition)
-* Start your question database ```quizzer.txt``` by creating a new text file and entering at least 5 questions manually
+* Start your question database ```quizzer.txt``` by creating a new text file and entering at least 5 questions manually, or by using the provided file
 * You may structure your question records how ever you wish, but each question should have:
 ```
 Question Text
@@ -24,9 +24,8 @@ A simple record layout might resemble the following (Answer 2 'Float' is the rig
 ```
 Which of the following is not a primitive type in Java,int,Float,boolean,char,2
 ```
-* A file with some random questions is included should you choose this record format
+* A file with some random questions is included in the repository should you choose this record format
 * Additional questions can be found here: https://www.geeksforgeeks.org/java-multiple-choice-questions/
-* Using JSON data as your record format is an option but you will have to load an additional JAR and add as a module just like we did with the PostgreSQL JDBC driver (https://www.geeksforgeeks.org/parse-json-java/)
 * You should create question template method that you can re-use that takes a question record and outputs a formatted question with answers, prompts for an answer, and grades their response
 
 
