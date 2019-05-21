@@ -9,12 +9,14 @@ public class Quizzer
     private static final java.util.Random gen = new java.util.Random();
     private final String QUESTION_FILE = "src/com/the3wcircus/quizzer.txt";
     private String testerName;
+    public static final String ANSI_GREEN  = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
 
     public Quizzer()
     {
         // Load up all the questions from the file
         java.util.Scanner input = new java.util.Scanner(System.in);
-        System.out.print("Tester, enter your name Please: ");
+        System.out.print(ANSI_YELLOW+"Tester, enter your name Please: ");
         testerName = input.nextLine();
         try
         {
@@ -41,13 +43,15 @@ public class Quizzer
 //            System.out.println(java.util.Arrays.toString(questionIndexes));
 
 
-            for (int ndx : questionIndexes) {
+            for (int ndx : questionIndexes)
+            {
                 quizQuestions.add(questions.get(ndx));
             }
 
             int qk = 0;
             int correct = 0;
-            for (Question q : quizQuestions) {
+            for (Question q : quizQuestions)
+            {
                 qk++;
                 if (q.ask(qk))
                 {
@@ -55,7 +59,8 @@ public class Quizzer
                 }
 
             }
-            System.out.println(String.format("%s, you correctly answered %d out of %d questions",testerName,correct,qk));
+
+            System.out.println(String.format("%s%s, you correctly answered %d out of %d questions", ANSI_YELLOW,testerName, correct, qk));
         }
         catch (java.io.FileNotFoundException e)
         {
@@ -96,6 +101,9 @@ class Question
     private java.util.HashMap<Integer, String> answers = new java.util.HashMap<>();
     private int correctAnswer;
     private final String CRLF = "\n";
+    public static final String ANSI_BLACK  = "\u001B[30m";
+    public static final String ANSI_RED    = "\u001B[31m";
+    public static final String ANSI_GREEN  = "\u001B[32m";
 
     Question(String questionRecord) throws Exception
     {
@@ -124,7 +132,7 @@ class Question
         java.util.Scanner reader = new java.util.Scanner(System.in);
         // Build question
         StringBuilder question = new StringBuilder();
-        question.append(String.format("%d. %s?", questionKount, questionText)).append(CRLF).append(CRLF)
+        question.append(String.format("%s%d. %s?",ANSI_GREEN,questionKount, questionText)).append(CRLF).append(CRLF)
                 .append(String.format("A. %s", answers.get(1))).append(CRLF)
                 .append(String.format("B. %s", answers.get(2))).append(CRLF)
                 .append(String.format("C. %s", answers.get(3))).append(CRLF)
@@ -133,7 +141,7 @@ class Question
 
         System.out.print(question.toString());
         String answer = reader.nextLine().trim().toUpperCase();
-        System.out.println("User answered "+answer+CRLF+"-----------------------------------"+CRLF);
+        System.out.println("User answered " + answer + CRLF + "-----------------------------------" + CRLF);
 
         // Check if they got it right
         switch (answer)
