@@ -11,6 +11,7 @@ public class Quizzer
     private String testerName;
     public static final String ANSI_GREEN  = "\u001B[32m";
     public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final int MAXQUESTIONS = 2;
 
     public Quizzer()
     {
@@ -39,7 +40,7 @@ public class Quizzer
             }
 
             // Get a random selection of questions
-            int[] questionIndexes = getRandomQuestionNumbers(5, 0, 5);
+            int[] questionIndexes = getRandomQuestionNumbers(MAXQUESTIONS, 0, MAXQUESTIONS);
 //            System.out.println(java.util.Arrays.toString(questionIndexes));
 
 
@@ -60,7 +61,9 @@ public class Quizzer
 
             }
 
-            System.out.println(String.format("%s%s, you correctly answered %d out of %d questions", ANSI_YELLOW,testerName, correct, qk));
+            float pctCorrect = (correct/qk)*100;
+            System.out.println(pctCorrect);
+            System.out.println(String.format("%s%s, you correctly answered %d out of %d questions for a score of %f percent", ANSI_YELLOW,testerName, correct, qk, pctCorrect));
         }
         catch (java.io.FileNotFoundException e)
         {
